@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doguito Petshop | Cadastro concluído</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./_base.css">
+    <link rel="stylesheet" href="./_componentes/head.css">
+    <link rel="stylesheet" href="./_componentes/card.css">
+    <link rel="stylesheet" href="./_componentes/inputs.css">
+    <link rel="stylesheet" href="./_componentes/button.css">
+    <link rel="stylesheet" href="./_componentes/table.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <img src="./_assets/doguitoadm.svg" alt="Logotipo Doguito" class="cabecalho__logo">
+        <nav>
+            <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link"><a href="./index.html">Dashboard</a></li>
+                <li class="cabecalho__link"><a href="./cadastro-product/index.html">Produtos</a></li>
+                <li class="cabecalho__link"><a href="./register-client/list_client/index.html">Clientes</a></li>
+                <li class="cabecalho__link"><a href="#">Pets</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container flex flex--colun flex--center">
+        <section class="cadastro-cartao card">
+            <span class="cadastro-cartao__icone-concluido"></span>
+            <h1 class="cadastro-cartao__titulo card_title">Pets</h1>
+        </section>
+
+        <section class="cadastro-cartao card">
+            <span class="cadastro-cartao__icone-concluido"></span>
+            <h1 class="cadastro-cartao__titulo  card_title">Clientes</h1>
+
+            <table class="tabela">
+                <thead>
+                    <tr>
+                        <th class="tabela__coluna--p">Nome</th>
+                        <th class="tabela__coluna--g">Email</th>
+                        <th class="tabela__coluna--m tabela__alinhamento--direita"><a href="../register-client/index.html" class="botao-simples botao-simples--adicionar">Novo Cliente</a></th>
+                    </tr>
+                </thead>
+                <tbody  id="data-tabela">
+                   
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+<script type="module" src="./_api/controller/listClient.js"></script>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doguito Petshop | Atualizar cliente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="../../_base.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../../_componentes/head.css">
+    <link rel="stylesheet" href="../../_componentes/card.css">
+    <link rel="stylesheet" href="../../_componentes/inputs.css">
+    <link rel="stylesheet" href="../../_componentes/button.css">
+</head>
+<body>
+    <header class="cabecalho container">
+        <img src="../../_assets/doguitoadm.svg" alt="Logo Doguito" class="cabecalho__logo">
+        <nav>
+            <ul class="cabecalho__lista-navegacao">
+                <li class="cabecalho__link"><a href="./index.html">Dashboard</a></li>
+                <li class="cabecalho__link"><a href="../../cadastro-product/index.html">Produtos</a></li>
+                <li class="cabecalho__link"><a href="../../list_client/index.html">Clientes</a></li>
+                <li class="cabecalho__link"><a href="#">Pets</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container flex flex--center flex--colun">
+        <section class="card cadastro">
+            <h1 class="card_title">Edição</h1>
+            <form action="./edit-concluded/index.html" class="form flex flex--colun" data-form>
+                <fieldset>
+                    <legend class="form__legend">Informações básicas</legend>
+                    <div class="input-container">
+                        <input name="name" id="name" class="input" type="text" placeholder="nome"
+                        required data-name>
+                        <label class="input-label" for="name">nome</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input data-email name="email" id="email" class="input" type="email" placeholder="Email">
+                        <label class="input-label" for="email">Email</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="form__legenda">Informações pessoais</legend>
+                    <div class="input-container">
+                        <input name="nascimento" id="nascimento" class="input" type="date" placeholder="Data de nascimento" 
+                            data-dataNascimento required >
+                        <label class="input-label" for="nascimento" >Data de nascimento</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input data-cpf name="cpf" id="cpf" class="input" type="number" placeholder="CPF">
+                        <label class="input-label" for="cpf" data-tipo="cpf" required >CPF</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend class="form__legenda">Endereço</legend>
+                    <div class="input-container">
+                        <input data-cep name="cep" id="cep" class="input" pattern="[\d]{5}-?[\d]{3}" type="text" placeholder="CEP">
+                        <label class="input-label" required  for="cep">CEP</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input data-lagradouro name="logradouro" id="logradouro" class="input" type="text" placeholder="Logradouro">
+                        <label class="input-label" for="logradouro">Logradouro</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input data-city name="cidade" id="cidade" class="input" type="text" placeholder="Cidade">
+                        <label class="input-label" for="cidade">Cidade</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input data-state name="estado" id="estado" class="input" type="text" placeholder="Estado">
+                        <label class="input-label" for="estado">Estado</label>
+                        <span class="input-mensage-error">Este campo não está válido</span>
+                    </div>
+                </fieldset>
+
+                <button class="botao" >editar</a>
+                </form>
+        </section>
+    </main>
+    
+</body>
+<script type="module" src="../../_api/controller/updatecliente.js"></script>
+</html>

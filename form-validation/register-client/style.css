@@ -1,0 +1,29 @@
+.register-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 1rem;
+}
+
+.register-header_logo {
+    width: 2.625rem;
+    margin-bottom: 0.5rem;
+}
+
+.register-header_title {
+    font-family: var(--fonte-familia-logo);
+    font-size: var(--fonte-tamanho-logo);
+    margin-bottom: 1rem;
+}
+
+@media(min-width: 800px) {
+    .register-header_logo {
+        width: 5.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .register-header_title  {
+        margin-bottom: 2rem;
+    }
+}

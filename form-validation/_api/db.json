@@ -1,0 +1,38 @@
+{
+  "profile": [
+    {
+      "nome": "Renara",
+      "email": "renarasecchim@gmail.com",
+      "pass": "66093671",
+      "dataNascimento": "1997-04-02",
+      "cpf": "66093671",
+      "adress": {
+        "cep": "Belém",
+        "logradouro": "Belém",
+        "city": "PA"
+      },
+      "id": 3
+    },
+    {
+      "nome": "RENARA MARIA OLIVEIRA SECCHIM",
+      "email": "renarasecchim@gmail.com",
+      "pass": "As123456",
+      "dataNascimento": "1997-04-02",
+      "cpf": "02083631226",
+      "adress": {
+        "cep": "66093671",
+        "logradouro": "Rua Pirajá",
+        "city": "Belém",
+        "state": "PA"
+      },
+      "id": 3
+    }
+  ],
+  "pets": [
+    {
+      "nome": "rocket",
+      "client": "renara",
+      "id": 1
+    }
+  ]
+}
