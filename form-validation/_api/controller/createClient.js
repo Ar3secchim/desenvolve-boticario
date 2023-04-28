@@ -15,8 +15,17 @@ form.addEventListener("submit", (event) => {
   const city = event.target.querySelector('[data-city]').value
   const state = event.target.querySelector('[data-state]').value
 
-  create(nome, email, pass, dataNascimento, cpf, cep, logradouro, city, state)
-  .then(() => {
-    window.location.href = '../register-client/resgister-adm/index.html'    
-  })
+  const render = async () => {
+    try{
+      await create(nome, email, pass, dataNascimento, cpf, cep, logradouro, city, state)
+      .then(() => {
+        window.location.href = '../register-client/register-concluded/index.html'    
+      })
+    }catch(Error){
+      console.log(Error)
+      window.location.href = 'http://localhost:5501/form-validation/error/index.html'
+    }
+  }
+  render()
+
 })

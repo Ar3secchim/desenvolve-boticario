@@ -28,10 +28,17 @@ detailsCliente(id)
 })
 
 const form = document.querySelector('[data-form]')
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit',  (event) => {
   event.preventDefault()
-  update(id, nome.value, email.value, cpf.value, dataNascimento.value, cep.value, logradouro.value, city.value, state.value)
-  .then(() => {
-    window.location.href = '../../register-client/list_client/index.html'    
-  })
+  const render = async () => {
+    try {
+      await update(id, nome.value, email.value, cpf.value, dataNascimento.value, cep.value, logradouro.value, city.value, state.value)
+      .then(() => {
+        window.location.href = '../../register-client/list_client/index.html'    
+      })
+    }catch(err) {
+      window.location.href = 'http://localhost:5501/form-validation/error/index.html'
+    }
+  }
+  render()
 })
