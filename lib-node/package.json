@@ -1,0 +1,15 @@
+{
+  "name": "lib-node",
+  "version": "0.0.1",
+  "description": "lib test md ",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/cli.js ./files/test2.md --valida"
+  },
+  "author": "Renara Secchim",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "5.0.1"
+  }
+}
