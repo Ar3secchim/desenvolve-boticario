@@ -1,48 +1,17 @@
 import express from 'express'
+import routes from './routes/index.js'
 import db from './config/dbConnect.js'
+import books from './models/books.js'
 
-db.on("error", console.log.bind(console, ))
+db.on("error", console.log.bind(console, "erro de conexão"))
+db.once("open", () => {
+	console.log('conexão com o banco feita com sucesso')
+})
 
-const app = express()
+const app = express()	
+
 app.use(express.json())
 
-const books = [
-	{
-		name: "renara",
-		id: "1"
-	},
-	{
-		name: "ane",
-		id: "2"
-	},
-]
-
-app.get('/books', (req, res) => {
-	res.status(200).json(books)
-})
-
-app.post('/books', (req, res) => {
-	books.push(req.body)
-	res.status(201).send('livro cadastrado')
-})
-
-app.put('/books/:id', (req, res) => {
-	let index = findBook(req.params.id)
-	books[index].name = req.body.name
-
-	res.status(200).json(books)
-})
-
-function findBook (id){
-	return books.findIndex(book=> book.id == id)
-}
-
-app.delete('/books/:id', (req, res)=>{
-	let {id} = req.params
-	let index = findBook(id)
-	books.splice(index, 1)
-
-	res.send(`Books delete ${id}`)
-})
+routes(app)
 
 export default app

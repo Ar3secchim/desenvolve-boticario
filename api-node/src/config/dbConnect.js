@@ -1,7 +1,13 @@
 import mongoose from 'mongoose'
 
-mongoose.connect("mongodb+srv://renarasecchim:ar3secchim@test.qkq6s4r.mongodb.net/?alura.books")
+const username = "renara";
+const password = "renara";
+const cluster = "books.q7hxazw";
+const dbname = "books-library"
 
-let db = mongoose.connect;
+mongoose.connect(
+	`mongodb+srv://${username}:${password}@${cluster}.mongodb.net/${dbname}?retryWrites=true&w=majority`
+)
 
+let db  = mongoose.connection
 export default db
