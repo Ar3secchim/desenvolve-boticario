@@ -20,8 +20,7 @@ class booksController {
 
 	static deleteBooks = (req, res) =>{
 		const id = req.params.id
-
-		books.findByIdAndDelete(id, res.status(200).send({message:"livro removido"}))
+		books.findByIdAndDelete(id, res.status(200).send( { message:"livro removido"} ))
 	}
 }
 
