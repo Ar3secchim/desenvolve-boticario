@@ -1,12 +1,11 @@
-const routes = require('../routes')
+const { Router } = require('express')
 const UsersController = require('../controllers/UsersController')
 
-
-const router = routes()
+const router = Router()
 
 router
   .get('/users', UsersController.pullAllUsers)
-  .get('/users/:id', UsersController.pullOneUsers)
+  .get('/users/:id', UsersController.findOneUsers)
   .post('/users', UsersController.createUsers)
   .put('/users/:id', UsersController.updateUsers)
   .delete('/users', UsersController.deleteUsers)

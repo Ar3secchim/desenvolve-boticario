@@ -20,6 +20,9 @@
 **Server:**
   - NodeJs
 
+**DataBase:**
+  _ mySql
+
 &nbsp;
 ## Maiores desafios
 - Atualmente está sendo colocar em prática o aprendizado do curso.

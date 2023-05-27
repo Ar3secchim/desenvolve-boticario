@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
   class classe extends Model {
     /**
@@ -13,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       classe.belongsTo(models.Users, {
         foreignKey: 'docente_id'
       })
-      classe.belongsTo(models.cla,{
+      classe.belongsTo(models.classe,{
         foreignKey: 'nivel_id'
       })
     }
