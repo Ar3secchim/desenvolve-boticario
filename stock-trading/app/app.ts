@@ -1,4 +1,9 @@
-import { Negotiation } from './models/negotiation';
+import { NegotiationController } from "./controllers/negotiationControler.js";
 
-const negotiation = new Negotiation(new Date(), 10, 100);
-console.log(negotiation.volume);
+const controllers = new NegotiationController();
+const form = document.querySelector('.form')
+
+form.addEventListener('submit', event =>{
+  event.preventDefault()
+  controllers.add()
+})
