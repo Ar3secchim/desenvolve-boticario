@@ -1,4 +1,5 @@
 require('dotenv').config()
+require('./regis/blacklist')
 
 const app = require('./app');
 const port = 5001;

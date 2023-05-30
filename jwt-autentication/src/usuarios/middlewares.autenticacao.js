@@ -8,6 +8,11 @@ module.export ={
           return res.status(401).json({erro: erro.message})
         }
 
+        if(erro && erro.name === 'tokenExperimedError'){
+          return res.status(401)
+          .json({erro: erro.message, expiradoem: erro.expiredAt})
+        }
+
         if(erro){
           return res.status(500).json({erro: erro.message})
         }
@@ -37,6 +42,7 @@ module.export ={
           return res.status(401).json()
         }
 
+        req.token = info.token
         req.user = usuario
         return next()
       }
