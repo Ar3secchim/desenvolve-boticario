@@ -16,7 +16,6 @@ export class NegociationsView extends View<Negotiations>{
             ${model.list().map(item => {
               return `
               <tr>
-              //format date
                 <td>${this.formate(item.data)}</td>
                 <td>${item.amount}</td>
                 <td>${item.value}</td>
