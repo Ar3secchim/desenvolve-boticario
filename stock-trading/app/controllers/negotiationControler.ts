@@ -1,3 +1,4 @@
+import { DaysWeek } from "../enums/daysWeek.js"
 import { Negotiation } from "../models/negotiation.js"
 import { Negotiations } from "../models/negotiations.js"
 import { MessageViews } from "../views/menssade-views.js"
@@ -18,19 +19,23 @@ export class NegotiationController{
     this.negotiationViews.update(this.negotiations)
   }
 
-  add(): void{
+  public additional(): void{
     const negotiation = this.createNegotiation()
-    this.negotiations.add(negotiation)
+
+    if (!this.businnesDay){
+      this.messageView.update('apenas negociações em dias utéis são possivéis')
+    }
+
+    this.negotiations.additional(negotiation)
     this.updateView()
     this.cleanForm()
   }
 
-  createNegotiation():Negotiation {
+  public createNegotiation(): Negotiation {
     const exp = /-/g
     const date = new Date(this.inputData.value.replace(exp, ","))
     const amout = parseInt(this.inputAmount.value)
     const value = parseFloat(this.inputValue.value)
-
 
     return new Negotiation(
       date, amout, value
@@ -45,8 +50,13 @@ export class NegotiationController{
     this.inputAmount.focus()
   }
 
-  private updateView():void{
+  private updateView(): void{
     this.negotiationViews.update(this.negotiations)
     this.messageView.update("Negociação adicionada com sucesso")
+  }
+
+  private businnesDay(date: Date) : boolean {
+    return date.getDay() > DaysWeek.MONDAY 
+        && date.getDay() < DaysWeek.SATURDAY 
   }
 }

@@ -32,5 +32,4 @@ export class NegociationsView extends View<Negotiations>{
   private formate (date: Date): string{
     return new Intl.DateTimeFormat().format(date) 
   }
-
 }

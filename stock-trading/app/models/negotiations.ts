@@ -3,12 +3,12 @@ import { Negotiation } from "./negotiation.js";
 export class Negotiations {
   private negotiations: Array<Negotiation> = []
 
-  add(negotiation: Negotiation){
+  public additional(negotiation: Negotiation){
     this.negotiations.push(negotiation)
   }
 
   //read only
-  list(): ReadonlyArray<Negotiation>{
+  public list(): ReadonlyArray<Negotiation>{
     return this.negotiations
   }
 }
