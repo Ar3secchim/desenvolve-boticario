@@ -1,6 +1,5 @@
 {
   "name": "stock-trading",
-  "version": "1.0.0",
   "description": "Negociation actions",
   "main": "index.js",
   "scripts": {

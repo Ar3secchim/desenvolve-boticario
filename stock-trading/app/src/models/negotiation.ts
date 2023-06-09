@@ -1,4 +1,6 @@
-export class Negotiation {
+import { Printable } from "../utils/printable";
+
+export class Negotiation implements Printable {
 	constructor(
 		private _date : Date,
 		readonly amount: number,
@@ -23,5 +25,13 @@ export class Negotiation {
     return new Negotiation(
       date, amout, value
     )
+	}
+
+	public forText(): string{
+		return`
+			Data: ${this._date}
+			Amount: ${this.amount}
+			Value: ${this.value}
+		`
 	}
 }

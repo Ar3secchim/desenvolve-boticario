@@ -1,3 +1,5 @@
+import { inspect } from "../decortactor/inspect.js"
+
 //necessary child for init
 export abstract class View <T>{
   //inheritance from father to son
@@ -20,6 +22,7 @@ export abstract class View <T>{
   //include error compilation
   protected abstract template(model: T): string
 
+  @inspect
   public update(model: T): void{
     const exp = "<script> [/s/S]*?< \/script>/"
     let template = this.template(model)

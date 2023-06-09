@@ -58,9 +58,9 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: #ffffff;
   text-align: left;
-  background-color: #fff;
+  background-color: #2b2830;
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -548,6 +548,7 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  padding-top: 70px;
   margin-right: auto;
   margin-left: auto;
 }

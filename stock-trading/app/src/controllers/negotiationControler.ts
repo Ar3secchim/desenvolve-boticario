@@ -6,21 +6,31 @@ import { NegociationsView } from "../views/negociation-views.js"
 
 import { DaysWeek } from "../enums/daysWeek.js"
 
+import { timeExecut } from "../decortactor/time-execut.js"
+import { inspect } from "../decortactor/inspect.js"
+import { domInject } from "../decortactor/domInject.js"
+
+import { NegotiationService } from "../services/negotiationService.js"
+import { thePrint } from "../utils/toPrint.js"
+
 export class NegotiationController{
-  private inputData : HTMLInputElement 
+  @domInject('#data')
+  private inputData : HTMLInputElement
+  @domInject('#amount')
   private inputAmount: HTMLInputElement 
+  @domInject('#value')
   private inputValue: HTMLInputElement
+
   private negotiations = new Negotiations()
   private negotiationViews = new NegociationsView('#negotiationsView', true)
   private messageView = new MessageViews('#messageView')
-
+  private negotiationService = new NegotiationService()
+  
   constructor() {
-    this.inputData = document.querySelector('#data') as HTMLInputElement
-    this.inputAmount = document.querySelector('#amount') as HTMLInputElement
-    this.inputValue = document.querySelector('#value') as HTMLInputElement
     this.negotiationViews.update(this.negotiations)
   }
 
+  @timeExecut(true)
   public additional(): void{
     const negociation = Negotiation.createIn(
       this.inputData.value,
@@ -34,8 +44,19 @@ export class NegotiationController{
     }
 
     this.negotiations.additional(negociation)
-    this.updateView()
+    thePrint(negociation, this.negotiations)
+    this.updateView() 
     this.cleanForm()
+  }
+
+  public getData():void{
+    this.negotiationService.getNegociationsDays()
+    .then(negociationsDay => {
+      for (let negociation of negociationsDay) {
+        this.negotiations.additional(negociation)
+      }
+      this.negotiationViews.update(this.negotiations)
+    })
   }
 
   private cleanForm(): void {
@@ -46,6 +67,7 @@ export class NegotiationController{
     this.inputAmount.focus()
   }
 
+  @timeExecut()
   private updateView(): void{
     this.negotiationViews.update(this.negotiations)
     this.messageView.update("Negociação adicionada com sucesso")

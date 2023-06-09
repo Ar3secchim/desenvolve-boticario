@@ -1,4 +1,3 @@
-/* Código simplório, apenas para fornecer o serviço para a aplicação */
 
 var api = require('../api');
 
