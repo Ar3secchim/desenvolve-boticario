@@ -12,6 +12,7 @@ import { DaysWeek } from "../enums/daysWeek.js";
 import { timeExecut } from "../decortactor/time-execut.js";
 import { domInject } from "../decortactor/domInject.js";
 import { NegotiationService } from "../services/negotiationService.js";
+import { thePrint } from "../utils/thePrint.js";
 export class NegotiationController {
     constructor() {
         this.negotiations = new Negotiations();
@@ -27,12 +28,19 @@ export class NegotiationController {
             return;
         }
         this.negotiations.additional(negociation);
+        thePrint(negociation, this.negotiations);
         this.updateView();
         this.cleanForm();
     }
     getData() {
-        this.negotiationService.getNegociationsDays()
+        this.negotiationService
+            .getNegociationsDays()
             .then(negociationsDay => {
+            return negociationsDay.filter(negociationsDay => {
+                return !this.negotiations.list()
+                    .some(negotiation => negotiation.isEquals(negociationsDay));
+            });
+        }).then(negociationsDay => {
             for (let negociation of negociationsDay) {
                 this.negotiations.additional(negociation);
             }
@@ -69,3 +77,4 @@ __decorate([
 __decorate([
     timeExecut()
 ], NegotiationController.prototype, "updateView", null);
+//# sourceMappingURL=negotiationControler.js.map

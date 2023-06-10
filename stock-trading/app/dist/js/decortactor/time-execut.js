@@ -13,3 +13,4 @@ export function timeExecut(seg = false) {
         return descriptor;
     };
 }
+//# sourceMappingURL=time-execut.js.map

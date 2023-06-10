@@ -7,11 +7,10 @@ import { NegociationsView } from "../views/negociation-views.js"
 import { DaysWeek } from "../enums/daysWeek.js"
 
 import { timeExecut } from "../decortactor/time-execut.js"
-import { inspect } from "../decortactor/inspect.js"
 import { domInject } from "../decortactor/domInject.js"
 
 import { NegotiationService } from "../services/negotiationService.js"
-import { thePrint } from "../utils/toPrint.js"
+import { thePrint } from "../utils/thePrint.js"
 
 export class NegotiationController{
   @domInject('#data')
@@ -49,14 +48,20 @@ export class NegotiationController{
     this.cleanForm()
   }
 
-  public getData():void{
-    this.negotiationService.getNegociationsDays()
-    .then(negociationsDay => {
-      for (let negociation of negociationsDay) {
-        this.negotiations.additional(negociation)
-      }
-      this.negotiationViews.update(this.negotiations)
-    })
+  public getData() :void {
+    this.negotiationService
+      .getNegociationsDays()
+      .then(negociationsDay => {
+        return negociationsDay.filter(negociationsDay => {
+          return !this.negotiations.list()
+          .some(negotiation => negotiation.isEquals(negociationsDay))
+        })
+      }).then(negociationsDay =>{
+        for (let negociation of negociationsDay) {
+          this.negotiations.additional(negociation)
+        }
+        this.negotiationViews.update(this.negotiations)
+      })
   }
 
   private cleanForm(): void {

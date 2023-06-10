@@ -10,3 +10,4 @@ export function domInject(seletor) {
         Object.defineProperty(target, propertykey, { get: getter });
     };
 }
+//# sourceMappingURL=domInject.js.map

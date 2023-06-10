@@ -1,6 +1,6 @@
-import { Printable } from "../utils/printable";
+import { Model } from "../interface/model.js";
 
-export class Negotiation implements Printable {
+export class Negotiation implements Model<Negotiation> {
 	constructor(
 		private _date : Date,
 		readonly amount: number,
@@ -33,5 +33,11 @@ export class Negotiation implements Printable {
 			Amount: ${this.amount}
 			Value: ${this.value}
 		`
+	}
+
+	public isEquals(negotiation: Negotiation): boolean{
+		return this.data.getDate() === negotiation.data.getDate()
+				&& this.data.getMonth() === negotiation.data.getMonth()
+				&& this.data.getFullYear() === negotiation.data.getFullYear()
 	}
 }

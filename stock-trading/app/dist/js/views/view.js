@@ -31,3 +31,4 @@ export class View {
 __decorate([
     inspect
 ], View.prototype, "update", null);
+//# sourceMappingURL=view.js.map
