@@ -1,0 +1,61 @@
+.newTasks {
+    display:flex;
+    width: 90%;
+    flex-direction: column;
+
+    background-color: #9376a1;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #0000009F;
+    padding: 12px;
+  
+    .inputContainer {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 16px;
+    
+      label {
+        margin-bottom: 8px;
+        font-size: 1.5rem;
+        padding: 0.25rem;
+      }
+  
+      input {
+        color: white;
+        width: 100%;
+        padding: 8px 12px 4px;
+        box-sizing: border-box;
+        border: unset;
+        border-radius: 5px;
+        background-color: #755d7c;
+        box-shadow: 0px 2px 4px #2d2b2d9f inset;
+        font-size: large;
+        
+        &::placeholder {
+          color: #BFBFBF;
+        }
+      }
+    }
+  
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      padding: 1rem;
+      box-sizing: border-box;
+  
+      .inputContainer {
+       
+        &:last-of-type {
+          width: 100%;
+        }
+  
+        label {
+          font-size: 1.25rem;
+        }
+  
+        input {
+          height: 100%;
+          font-size: 1.25rem;
+        }
+      }
+    }
+  }

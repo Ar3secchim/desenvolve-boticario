@@ -6,7 +6,7 @@
 &nbsp;
 
 ## Screenshot
-
+  
 
 &nbsp;
 
@@ -16,12 +16,13 @@
   - Css 
   - Javascript
   - Html
+  - Typescript
 
 **Server:**
   - NodeJs
 
 **DataBase:**
-  _ mySql
+  - mySql
 
 &nbsp;
 ## Maiores desafios

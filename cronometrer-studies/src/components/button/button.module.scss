@@ -1,0 +1,17 @@
+.ButtonStyle{
+  background-color: rgb(240, 240, 240);
+  color:rgb(106, 13, 134) ;
+
+  padding: 0.5rem;
+  font-size: medium;
+  font-weight: bold;
+
+  border-style: none;
+  border-radius: 0.25rem;
+  
+  &:hover{
+    background-color:rgb(60, 0, 128);
+    color: white;
+    cursor: pointer;
+  }
+}
