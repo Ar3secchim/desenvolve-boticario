@@ -29,6 +29,9 @@
   
   .item {
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    
     background-color: #4D4D4D;
     border-radius: 0.5rem;
     box-shadow: 2px 4px 4px #0000009F;
@@ -55,16 +58,13 @@
   .itemCheck {
     background-color: #566F42;
     cursor: auto;
+    
   
     .check {
-      display: block;
       background-image: url('../../../public/check-mark.svg');
       background-repeat: no-repeat;
       background-size: 38px 38px;
-      position: absolute;
-      top: 50%;
-      right: 12px;
-      transform: translateY(-50%);
+  
       width: 42px;
       height: 43px;
     }
