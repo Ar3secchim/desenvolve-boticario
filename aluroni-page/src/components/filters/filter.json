@@ -1,0 +1,17 @@
+[
+  {
+    "label":"Massas",
+    "id":1
+  },{
+    "label":"Combos",
+    "id":2
+  },
+  {
+    "label":"Carnes",
+    "id":3
+  },
+  {
+    "label":"Veganos",
+    "id":4
+  }
+]
