@@ -24,7 +24,6 @@ time, mark, audio, video {
 /* HTML5 display-role reset for older browsers */
 *{
 	box-sizing: border-box;
-	background-color: #f1f1f1f1;
 	font-family: 'Italiana', serif;
 }
 

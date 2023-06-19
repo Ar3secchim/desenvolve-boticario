@@ -6,11 +6,13 @@ import styles from './home.module.scss'
 
 import {ReactComponent as Logo} from 'assets/logo.svg'
 import Order from 'components/order'
+import Itens from 'components/itens'
 
 
 function Home(){
   const [search, setSearch] = useState("")
   const [filter, setFilter] = useState<number| null >(null)
+  const [order, setOrder] = useState("")
 
   return(
     <main>
@@ -31,11 +33,15 @@ function Home(){
 
         <div className={styles.menu__filter}>
           <Filters filter={filter} setFilter={setFilter}/>
-          <Order />
+
+          <span>
+            <Order order={order} setOrder={setOrder}/>
+          </span>
         </div>
 
+        <Itens />
       </section>
-      
+
     </main>
   )
 }
