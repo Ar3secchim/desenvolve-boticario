@@ -1,4 +1,4 @@
-import menu from "./itens.json" 
+import menu from "../../../Data/menu.json" 
 import Item from "./item"
 import styles from "./itens.module.scss"
 import { useEffect, useState } from "react"

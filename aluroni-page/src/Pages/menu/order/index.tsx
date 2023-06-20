@@ -1,9 +1,9 @@
 import { useState } from "react"
 import classNames from "classnames"
-
-import options from "./option.json"
-import style from "./order.module.scss"
 import {MdKeyboardArrowDown, MdKeyboardArrowUp} from "react-icons/md"
+
+import options from "../../../Data/option.json"
+import style from "./order.module.scss"
 
 interface Pros{
   order: string,

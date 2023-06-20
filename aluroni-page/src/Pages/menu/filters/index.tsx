@@ -1,5 +1,5 @@
 import styles from "./filters.module.scss"
-import filters from "./filter.json"
+import filters from "../../../Data/filter.json"
 
 import React from "react"
 import classNames from "classnames"

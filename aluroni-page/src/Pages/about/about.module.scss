@@ -1,0 +1,34 @@
+.about {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: justify;
+
+  p {
+      font-family: 'Josefin Sans', sans-serif;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.imagens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  &__imagem {
+    width: 500px;
+    img {
+      border-radius: 5px;
+      width: 100%;
+    }
+  }
+}
