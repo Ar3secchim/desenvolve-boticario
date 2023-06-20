@@ -10,7 +10,7 @@ interface Pros{
   setOrder: React.Dispatch<React.SetStateAction<string>>
 }
 function Order({order, setOrder}: Pros){
-  const [close, setClose] = useState(false)
+  const [close, setClose] = useState(true)
   const nameOrder = order && options.find(option => option.value === order)?.nome
 
   return(
@@ -21,7 +21,7 @@ function Order({order, setOrder}: Pros){
       onClick={()=> setClose(!close)}
       onBlur={()=> setClose(true)}
     >
-      <span>{nameOrder || "O rdenar por"}</span>
+      <span>{nameOrder || "Ordenar por"}</span>
       {close ? <MdKeyboardArrowDown size={20}/> : <MdKeyboardArrowUp size={20}/>}
       
       <div className={classNames({
