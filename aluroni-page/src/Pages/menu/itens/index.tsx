@@ -1,3 +1,4 @@
+import { Menu } from "Types/dishes"
 import menu from "../../../Data/menu.json" 
 import Item from "./item"
 import styles from "./itens.module.scss"
@@ -24,7 +25,7 @@ export default function Itens(props:Props) {
 		return true
 	}
 
-	function orders(newList: typeof menu){
+	function orders(newList: Menu){
 		switch (order) {
 		case "porcao":
 			return newList.sort((a,b)=> a.size > b.size ? 1 : -1)

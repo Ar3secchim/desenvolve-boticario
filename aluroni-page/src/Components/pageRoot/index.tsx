@@ -1,21 +1,20 @@
 import { Outlet } from "react-router-dom"
+import React from "react"
+
 import Header from "Components/header"
+
 import styleTema from "../../Styles/tema.module.scss"
-import Navigation from "Components/navigation"
-import Footer from "Components/footer"
 
-
-function PageRoot(){
+function PageRoot({children}: {children?: React.ReactNode}){
 	return(
 		<>
-			<Navigation />
 			<Header />
 
 			<div className={styleTema.container}>
 				<Outlet />
+				{children}
 			</div>
 
-			<Footer />
 		</>
 	)
 }
