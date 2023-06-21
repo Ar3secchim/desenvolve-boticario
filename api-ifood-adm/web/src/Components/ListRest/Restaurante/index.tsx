@@ -1,3 +1,4 @@
+import React from 'react'
 import IRestaurante from '../../../Types/IRestaurante'
 import Prato from '../Prato'
 import estilos from './Restaurante.module.scss'
