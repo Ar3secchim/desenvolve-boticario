@@ -1,3 +1,4 @@
+import React from 'react'
 import IPrato from '../../../Types/IPrato'
 import estilos from './Prato.module.scss'
 

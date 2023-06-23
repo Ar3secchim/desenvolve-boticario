@@ -5,6 +5,7 @@ import IPaginacao from '../../Types/IPaginacao'
 
 import Restaurante from './Restaurante'
 import style from './ListaRestaurantes.module.scss'
+import IPrato from '../../Types/IPrato'
 
 const ListaRestaurantes = () => {
 	const [restaurantes, setRestaurantes] = useState<IRestaurante[]>([])

@@ -3,6 +3,7 @@ import Banner from '../../Components/Banner'
 import NavBar from '../../Components/NavBar'
 import Rodape from '../../Components/Footer'
 import estilos from './Home.module.scss'
+import React from 'react'
 
 function App() {
 	return (

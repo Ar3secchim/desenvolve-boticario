@@ -23,6 +23,18 @@ function NavBarAdm(){
 									Cadastrar novo Restaurante	
 							</Button>
 						</Link>
+
+						<Link  to={'/admin/pratos'}>
+							<Button sx={{my: 2, color:'white'}} > 
+									Pratos
+							</Button>
+						</Link>
+
+						<Link  to={'/admin/pratos/novo'}>
+							<Button sx={{my: 2, color:'white'}} > 
+									Novo Prato
+							</Button>
+						</Link>
 					</Box>
 				</Toolbar>
 			</Container>
