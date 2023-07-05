@@ -5,7 +5,7 @@ import realizaSorteio from "../helpers/realizaSorteio"
 
 export const useSorteador = () =>{
   const participantes = useListaParticipantes()
-  const setResultado= useSetRecoilState(resultadoDoAmigo)
+  const setResultado = useSetRecoilState(resultadoDoAmigo)
   
   return ()=>{
     const resultado = realizaSorteio(participantes)
