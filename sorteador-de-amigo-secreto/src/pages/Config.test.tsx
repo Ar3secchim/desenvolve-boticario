@@ -2,7 +2,6 @@ import { render } from "@testing-library/react";
 import { RecoilRoot } from "recoil";
 import App from "../App";
 
-
 const mockNavigation = jest.fn()
 
 jest.mock('react-router-dom', ()=>{
